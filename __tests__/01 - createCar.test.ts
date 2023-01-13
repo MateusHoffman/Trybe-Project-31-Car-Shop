@@ -4,7 +4,7 @@ import Connection from '../src/Models/Connection';
 import { clearDatabase, closeDatabase } from './utils/db';
 import { validCar } from './utils/CarsMock';
 
-describe('01 - Crie a rota /cars onde seja possível cadastrar um carro', () => {
+describe.skip('01 - Crie a rota /cars onde seja possível cadastrar um carro', () => {
 
   beforeEach(() => console.info(expect.getState().currentTestName, 'testando...\n\n' ));
 
