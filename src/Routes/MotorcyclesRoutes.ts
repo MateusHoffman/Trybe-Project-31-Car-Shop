@@ -1,12 +1,12 @@
-// import { Router } from 'express';
-// import MotorcyclesController from '../Controllers/MotorcyclesController';
+import { Router } from 'express';
+import MotorcyclesController from '../Controllers/MotorcyclesController';
 
-// const routes = Router();
+const routes = Router();
 
-// routes.post(
-//   '/cars',
-//   (req, res, next) => new MotorcyclesController(req, res, next).createOneCar(),
-// );
+routes.post(
+  '/motorcycles',
+  (req, res, next) => new MotorcyclesController(req, res, next).createOneMotorcycles(),
+);
 
 // routes.get(
 //   '/cars',
@@ -23,4 +23,4 @@
 //   (req, res, next) => new MotorcyclesController(req, res, next).updateCarById(),
 // );
 
-// export default routes;
+export default routes;
