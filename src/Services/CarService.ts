@@ -29,6 +29,26 @@ class CarService {
     const car = await carODM.findById(id);
     return this.createCarDomain(car);
   }
+
+  public async updateCarById(id: string, body: ICar) {
+    const oneCarById = await this.getCarById(id);
+    if (!oneCarById) {
+      throw new HttpException(404, 'Car not found');
+    }
+    if (id.length !== 24) {
+      throw new HttpException(422, 'Invalid mongo id');
+    }
+    const carODM = new CarODM();
+    const updatedCar = await carODM.update(id, body);
+    return this.createCarDomain(updatedCar);
+  
+    // if (id.length !== MAX_CHARACTERS_ID) {
+    //   throw new HttpException(422, INVALID_ID);
+    // }
+    // if (!updatedCar) {
+    //   throw new HttpException(404, NOT_FOUND);
+    // }
+  }
 }
 
 export default CarService;
