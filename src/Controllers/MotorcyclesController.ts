@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import IMotorcycle from '../Interfaces/IMotorcycle';
+// import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcyclesService from '../Services/MotorcyclesService';
 // import HttpException from '../Utils/HttpException';
 
