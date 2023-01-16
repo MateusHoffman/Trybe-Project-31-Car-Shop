@@ -41,13 +41,6 @@ class CarService {
     const carODM = new CarODM();
     const updatedCar = await carODM.update(id, body);
     return this.createCarDomain(updatedCar);
-  
-    // if (id.length !== MAX_CHARACTERS_ID) {
-    //   throw new HttpException(422, INVALID_ID);
-    // }
-    // if (!updatedCar) {
-    //   throw new HttpException(404, NOT_FOUND);
-    // }
   }
 }
 
