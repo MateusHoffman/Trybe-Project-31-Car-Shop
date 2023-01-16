@@ -8,10 +8,10 @@ routes.post(
   (req, res, next) => new MotorcyclesController(req, res, next).createOneMotorcycles(),
 );
 
-routes.get(
-  '/cars',
-  (req, res, next) => new MotorcyclesController(req, res, next).getAllMotorcycles(),
-);
+// routes.get(
+//   '/cars',
+//   (req, res, next) => new MotorcyclesController(req, res, next).getAllMotorcycles(),
+// );
 
 // routes.get(
 //   '/cars/:id',
