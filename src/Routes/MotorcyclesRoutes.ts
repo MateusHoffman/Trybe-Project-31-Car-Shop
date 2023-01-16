@@ -8,15 +8,15 @@ routes.post(
   (req, res, next) => new MotorcyclesController(req, res, next).createOneMotorcycles(),
 );
 
-// routes.get(
-//   '/cars',
-//   (req, res, next) => new MotorcyclesController(req, res, next).getAllMotorcycles(),
-// );
+routes.get(
+  '/motorcycles',
+  (req, res, next) => new MotorcyclesController(req, res, next).getAllMotorcycles(),
+);
 
-// routes.get(
-//   '/cars/:id',
-//   (req, res, next) => new MotorcyclesController(req, res, next).getCarById(),
-// );
+routes.get(
+  '/motorcycles/:id',
+  (req, res, next) => new MotorcyclesController(req, res, next).getMotorcycleById(),
+);
 
 // routes.put(
 //   '/cars/:id',

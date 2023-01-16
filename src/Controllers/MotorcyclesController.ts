@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-// import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcyclesService from '../Services/MotorcyclesService';
-// import HttpException from '../Utils/HttpException';
+import HttpException from '../Utils/HttpException';
 
 class MotorcyclesController {
   private req: Request;
@@ -20,6 +19,27 @@ class MotorcyclesController {
     try {
       const newMotorcycles = await this.service.createOneMotorcycles(this.req.body);
       return this.res.status(201).json(newMotorcycles);
+    } catch (error) {
+      this.next(error);
+    }
+  }
+
+  public async getAllMotorcycles() {
+    try {
+      const allMotorcycles = await this.service.getAllMotorcycles();
+      return this.res.status(200).json(allMotorcycles);
+    } catch (error) {
+      this.next(error);
+    }
+  }
+
+  public async getMotorcycleById() {
+    try {
+      const oneMotorcycleById = await this.service.getMotorcycleById(this.req.params.id);
+      if (!oneMotorcycleById) {
+        throw new HttpException(404, 'Motorcycle not found');
+      }
+      return this.res.status(200).json(oneMotorcycleById);
     } catch (error) {
       this.next(error);
     }
