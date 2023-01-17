@@ -15,7 +15,7 @@ describe('Test > MotorcyclesService', function () {
     sinon.restore();
   });
 
-  describe('Test > createOneCar', function () {
+  describe('Test > createOneMotorcycle', function () {
     it('201', async function () {
       sinon.stub(Model, 'create').resolves(outputOneMotorcycleById);
       const result = await service.createOneMotorcycles(inputCreateMotorcycle);
@@ -23,7 +23,7 @@ describe('Test > MotorcyclesService', function () {
     });
   });
   
-  describe('Test > getAllCars', function () {
+  describe('Test > getAllMotorcycles', function () {
     it('200', async function () {
       sinon.stub(Model, 'find').resolves(outputAllMotorcycles);
       const result = await service.getAllMotorcycles();
@@ -31,7 +31,7 @@ describe('Test > MotorcyclesService', function () {
     });
   });
 
-  describe('Test > getCarById', function () {
+  describe('Test > getMotorcycleById', function () {
     it('200', async function () {
       const { id } = outputOneMotorcycleById;
       sinon.stub(Model, 'findById').resolves(outputOneMotorcycleById);
@@ -50,7 +50,7 @@ describe('Test > MotorcyclesService', function () {
         sinon.stub(Model, 'findById').resolves(null);
         await service.getMotorcycleById('XXXXXXXXXXXXXXXXXXXXXXXX');
       } catch (error) {
-        expect((error as Error).message).to.be.equal('Car not found');
+        expect((error as Error).message).to.be.equal('Motorcycle not found');
       }
     });
   });
@@ -74,7 +74,7 @@ describe('Test > MotorcyclesService', function () {
         sinon.stub(Model, 'findByIdAndUpdate').resolves(null);
         await service.updateMotorcycleById('XXXXXXXXXXXXXXXXXXXXXXXX', inputUpdateMotorcycle);
       } catch (error) {
-        expect((error as Error).message).to.be.equal('Car not found');
+        expect((error as Error).message).to.be.equal('Motorcycle not found');
       }
     });
   });
