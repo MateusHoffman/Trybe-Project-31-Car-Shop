@@ -29,6 +29,20 @@ class MotorcyclesService {
     const motor = await motorcyclesODM.findById(id);
     return this.createMotorcyclesDomain(motor);
   }
+
+  public async updateMotorcycleById(id: string, body: IMotorcycle) {
+    if (id.length !== 24) {
+      throw new HttpException(422, 'Invalid mongo id');
+    }
+
+    const motorcyclesODM = new MotorcyclesODM();
+    const updatedMotorcycle = await motorcyclesODM.update(id, body);
+
+    if (!updatedMotorcycle) {
+      throw new HttpException(404, 'Motorcycle not found');
+    }
+    return this.createMotorcyclesDomain(updatedMotorcycle);
+  }
 }
 
 export default MotorcyclesService;

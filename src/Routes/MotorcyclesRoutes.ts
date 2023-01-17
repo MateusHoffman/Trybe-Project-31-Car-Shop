@@ -18,9 +18,9 @@ routes.get(
   (req, res, next) => new MotorcyclesController(req, res, next).getMotorcycleById(),
 );
 
-// routes.put(
-//   '/cars/:id',
-//   (req, res, next) => new MotorcyclesController(req, res, next).updateCarById(),
-// );
+routes.put(
+  '/motorcycles/:id',
+  (req, res, next) => new MotorcyclesController(req, res, next).updateMotorcycleById(),
+);
 
 export default routes;

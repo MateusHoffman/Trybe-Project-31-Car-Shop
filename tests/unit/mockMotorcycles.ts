@@ -39,8 +39,31 @@ const outputOneMotorcycleById = {
   engineCapacity: 600,
 };
 
+const inputUpdateMotorcycle = {
+  model: 'Honda CG 150',
+  year: 2010,
+  color: 'Yellow',
+  status: true,
+  buyValue: 10.000,
+  category: 'Street',
+  engineCapacity: 150,
+};
+
+const outputUpdateMotorcycle = {
+  id: '6348513f34c397abcad040b2',
+  model: 'Honda CG 150',
+  year: 2005,
+  color: 'Yellow',
+  status: true,
+  buyValue: 10.000,
+  category: 'Street',
+  engineCapacity: 150,
+};
+
 export {
   inputCreateMotorcycle,
   outputAllMotorcycles,
   outputOneMotorcycleById,
+  inputUpdateMotorcycle,
+  outputUpdateMotorcycle,
 };
