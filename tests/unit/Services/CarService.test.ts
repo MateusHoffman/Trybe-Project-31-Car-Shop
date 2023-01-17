@@ -74,10 +74,4 @@ describe('Test > CarService', function () {
       }
     });
   });
-
-  // describe('Test > updateCarById', function () {
-  //   it('200', async function () {
-
-  //   });
-  // });
 });
